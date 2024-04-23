@@ -19,15 +19,7 @@ const myStyle = {
 function Home() {
 
  
-  useEffect(() => {
-    axios.get('http://localhost:4000/')
-      .then(response => {
-        console.log('1111111', response);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
-  }, []);
+
   const navigate = useNavigate();
 
   return (

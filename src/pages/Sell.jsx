@@ -22,7 +22,7 @@ function Sell() {
 
   const handleSubmit = async (e) => {
     console.log("formData", formData);
-   await axios.post('http://localhost:4000/sell', formData)
+   await axios.post(`${process.env.REACT_APP_API_HOST}sell`, formData)
    setFormData(null)
       // .then((res) => {
       //   console.log(res);
