@@ -1,5 +1,8 @@
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
+
 import Home from './pages/Home';
 import Available from './pages/Available';
 import Sell from './pages/Sell';
@@ -24,7 +27,9 @@ function App() {
         </BrowserRouter>
         {/* <Navbar/> */}
       <TopNav />
+      <SpeedInsights />
     </div>
+
   );
 }
 
