@@ -1,8 +1,10 @@
 import React, {useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
 
 function Sell() {
 
+  const navigate = useNavigate();
   const initialFormData = {
     title: "",
     year: "",
@@ -24,14 +26,12 @@ function Sell() {
     // Prevent default form submission behavior
     e.preventDefault();
     try {
-      
-      console.log("formData", formData);
       const response = await axios.post(`${process.env.REACT_APP_API_HOST}sell`, formData);
       console.log(response); // Handle response from the server
 
       // Reset form data upon successful submission
       setFormData(initialFormData);
-      console.log("FORM DATA",formData);
+      navigate('/buy')
       
     } catch (error) {
       console.error("Error submitting form:", error);
